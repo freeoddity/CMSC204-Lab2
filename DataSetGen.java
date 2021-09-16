@@ -1,7 +1,7 @@
 
-public class DataSetGen<E extends Measurable> {
+public class DataSetGen<T extends Measurable> {
 	   private double sum;
-	   private Measurable maximum;
+	   private T maximum;
 	   private int count;
 	public DataSetGen()
 	{
@@ -9,7 +9,7 @@ public class DataSetGen<E extends Measurable> {
 		count = 0; 
 		maximum = null;
 	}
-	public void add(E e) {
+	public void add(T e) {
 		// TODO Auto-generated method stub
 		sum = sum + e.getMeasure();
 	    if (count == 0 || maximum.getMeasure() < e.getMeasure())
@@ -18,9 +18,9 @@ public class DataSetGen<E extends Measurable> {
 		
 	}
 
-	public E getMaximum() {
+	public T getMaximum() {
 		// TODO Auto-generated method stub
-		return (E) maximum;
+		return maximum;
 	}
 
 	public double getAverage() {
